@@ -1,34 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <EditText
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.myapplication.ItemViewModel" />
+    </data>
+
+    <RelativeLayout
         android:layout_marginTop="50dp"
-        android:id="@+id/edit_text_task"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/button_add_task"
-        android:hint="Nhập công việc mới" />
-
-    <Button
-        android:layout_marginTop="50dp"
-        android:id="@+id/button_add_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:text="Thêm" />
-
-    <ListView
-        android:id="@+id/list_view_tasks"
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/edit_text_task"
-        android:layout_marginTop="16dp" />
+        android:padding="16dp"
+        tools:context=".MainActivity">
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/edit_text_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/button_add_item"
+            android:hint="Nhập công việc mới"
+            android:text="@={viewModel.newItemName}" />
+
+        <Button
+            android:id="@+id/button_add_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:onClick="@{() -> viewModel.addItem()}"
+            android:text="Thêm" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/edit_text_item"
+            android:layout_marginTop="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </RelativeLayout>
+</layout>
