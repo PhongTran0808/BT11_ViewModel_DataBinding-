@@ -31,41 +31,6 @@
 Kiến trúc MVVM chia ứng dụng thành ba thành phần chính, giúp mã nguồn trở nên rõ ràng, dễ kiểm thử và bảo trì.
 
 
-
-### Sơ đồ luồng dữ liệu và tương tác trực quan:
-# Ứng dụng To-Do List (Kiến trúc MVVM)
-
-## . Tổng quan
-
-Đây là một ứng dụng ghi chú công việc (To-Do List) được xây dựng trên nền tảng Android bằng ngôn ngữ Kotlin. Dự án này được thiết kế theo kiến trúc MVVM (Model-View-ViewModel) hiện đại, sử dụng DataBinding để tạo sự liên kết chặt chẽ và tự động giữa giao diện người dùng (View) và logic nghiệp vụ (ViewModel).
-
-## . Tính năng
-
-*   **Đăng ký & Đăng nhập:** Hệ thống quản lý người dùng cơ bản.
-*   **Quản lý công việc:**
-    *   Thêm công việc mới.
-    *   Xem danh sách các công việc.
-    *   Sửa nội dung công việc.
-    *   Xóa công việc.
-*   **Lưu trữ cục bộ:** Dữ liệu người dùng và công việc được lưu trữ an toàn trên thiết bị bằng SQLite.
-*   **Giao diện động:** Giao diện tự động cập nhật khi có sự thay đổi dữ liệu mà không cần can thiệp thủ công.
-
-## . Công nghệ sử dụng
-
-*   **Ngôn ngữ:** Kotlin
-*   **Kiến trúc:** MVVM (Model-View-ViewModel)
-*   **Thư viện Android Jetpack:**
-    *   `ViewModel`: Quản lý logic và trạng thái của UI.
-    *   `LiveData`: Cung cấp dữ liệu có thể quan sát, giúp UI tự động cập nhật.
-    *   `DataBinding`: Liên kết các thành phần UI trong layout với nguồn dữ liệu một cách trực tiếp.
-*   **Giao diện:** `RecyclerView` để hiển thị danh sách một cách hiệu quả.
-*   **Cơ sở dữ liệu:** SQLite.
-
-## . Nguyên lý hoạt động (Kiến trúc MVVM)
-
-Kiến trúc MVVM chia ứng dụng thành ba thành phần chính, giúp mã nguồn trở nên rõ ràng, dễ kiểm thử và bảo trì.
-
-
 ### Sơ đồ luồng dữ liệu và tương tác trực quan:
 # Ứng dụng To-Do List (Kiến trúc MVVM)
 
